@@ -57,7 +57,7 @@ async def check_update(message: Message):
         return
     out = ''
     try:
-        for i in repo.iter_commits(f'{branch}..{Config.UPSTREAM_REMOTE}/{branch}'):
+        for i in repo.iter_commits(f'HEAD..{Config.UPSTREAM_REMOTE}/{branch}'):
             out += (f"🔨 **#{i.count()}** : "
                     f"[{i.summary}]({Config.UPSTREAM_REPO.rstrip('/')}/commit/{i}) "
                     f"👷 __{i.author}__\n\n")
